@@ -1,6 +1,5 @@
 import promptSync from 'prompt-sync';
-
-const prompt = require('prompt-sync')();
+const prompt = promptSync();
 
 let numeros = [];
 
@@ -14,26 +13,12 @@ for(let i=0; i < 3; i++){
 
 // console.log(numeros);
 
-
 // numeros.sort((a,b)=> a-b);
 // for(let num of numeros){
 //     console.log(num); 
 // }
 
 //algoritmo de ordenaMIENTO DE MENOR A mayor
-for(let i = 0; i < numeros.length -1; i++){
-    for(let j = 0; j < numeros.length -i -1; j++){
-        if (numeros[j] > numeros[j + 1]){
-            let numerosOrdenados = numeros[j];
-            numeros[j] = numeros[j+1];
-            numeros[j+1] = numerosOrdenados;
-        }
-    }
-    
-}
-console.log(numeros);
-
-//algoritmo de ordenaMIENTO DE mayor A menor
 for(let i = 0; i < numeros.length -1; i++){
     for(let j = 0; j < numeros.length -i -1; j++){
         if (numeros[j] < numeros[j + 1]){
@@ -44,7 +29,20 @@ for(let i = 0; i < numeros.length -1; i++){
     }
     
 }
-console.log(numeros);
+console.log(`numeros ordenados de mayor a menor ${numeros}`);
+
+//algoritmo de ordenaMIENTO DE mayor A menor
+for(let i = 0; i < numeros.length -1; i++){
+    for(let j = 0; j < numeros.length -i -1; j++){
+        if (numeros[j] > numeros[j + 1]){
+            let numerosOrdenados = numeros[j];
+            numeros[j] = numeros[j+1];
+            numeros[j+1] = numerosOrdenados;
+        }
+    }
+    
+}
+console.log(`numeros ordenados de menor a mayor ${numeros}`);
 
 
 
